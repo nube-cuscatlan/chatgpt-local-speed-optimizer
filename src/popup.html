@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Speed Optimizer for ChatGPT</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="panel">
+    <header class="header">
+      <div class="logo">SO</div>
+      <div class="title-block">
+        <h1>Speed Optimizer</h1>
+        <p>Local optimization for long chats</p>
+      </div>
+    </header>
+
+    <section class="status-card" id="siteStatus">
+      <div>
+        <strong id="statusTitle">Checking active tab</strong>
+        <span id="statusText">Open ChatGPT to see live optimization stats.</span>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Optimization statistics">
+      <article class="stat-card">
+        <span class="stat-label">Estimated RAM saved</span>
+        <strong id="statRam">0 MB</strong>
+        <small>Calculated estimate</small>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-label">Visual load reduced</span>
+        <strong id="statReduction">0%</strong>
+        <small>Hidden DOM turns</small>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-label">Messages hidden</span>
+        <strong id="statHidden">0</strong>
+        <small>Older turns</small>
+      </article>
+
+      <article class="stat-card">
+        <span class="stat-label">Rendered</span>
+        <strong id="statRendered">0 / 0</strong>
+        <small>Visible / total</small>
+      </article>
+    </section>
+
+    <section class="settings-card" aria-label="Settings">
+      <label class="row">
+        <span>
+          <strong>Enable optimization</strong>
+          <small>Hides older messages locally without deleting them.</small>
+        </span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <label class="field">
+        <span>Recent visible messages</span>
+        <input id="visibleTurns" type="number" min="1" max="200" step="1">
+      </label>
+
+      <label class="field">
+        <span>Messages shown per click</span>
+        <input id="loadStep" type="number" min="1" max="100" step="1">
+      </label>
+
+      <button id="save" type="button">Save settings</button>
+      <button id="refreshStats" type="button" class="secondary">Refresh stats</button>
+    </section>
+
+    <a href="https://ko-fi.com/nubecuscatlan" target="_blank" rel="noopener noreferrer" class="donation-link">
+      <img src="../icons/kofi.svg" alt="" class="donation-logo">
+      Support with a donation
+    </a>
+
+    <p class="note">
+      No subscriptions. No external APIs. No tracking. RAM saved is an estimate based on hidden conversation nodes because browser extensions cannot directly measure exact per-message RAM usage.
+    </p>
+
+    <p class="disclaimer">
+      Independent extension. Not affiliated with OpenAI.
+    </p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

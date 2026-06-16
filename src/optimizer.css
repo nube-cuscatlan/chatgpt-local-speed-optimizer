@@ -1,0 +1,7 @@
+html.cgpt-local-speed-optimizer-enabled .cgpt-lso-hidden-turn {
+  display: none !important;
+}
+
+html.cgpt-local-speed-optimizer-enabled .cgpt-lso-visible-old-turn {
+  opacity: 0.96;
+}
